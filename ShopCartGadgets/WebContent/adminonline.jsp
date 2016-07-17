@@ -60,14 +60,14 @@
           </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
-        
+        <li><a href="admincontact.jsp">Contact</a></li>  
+                
               </ul>
       <ul class="nav navbar-nav navbar-right">
       <!--  <li><a href="I/myaccount.jsp"><span class="glyphicon glyphicon-user">

@@ -65,13 +65,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
+        <li><a href="admincontact.jsp">Contact</a></li>  
                 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -115,25 +115,26 @@
 				<label for="userName">User Name:</label> <input type="text"
 				class="form-control"
 					name="userName" value="<c:out value="${user.userName}" />"
-					placeholder="User Name" />
+					readonly="readonly" placeholder="Auto Generates" />
 			</div>
 			<br>
 			
-			<!--  <div>
-				<label for="password">Password:</label> <input type="text"
-				class="form-control"
-					name="password" value="<c:out value="${user1.password}" />"
-					placeholder="********" />
-			</div>-->
-			
+					
 			<div>
 				<label for="role">Role:</label> <input type="text"
 				class="form-control"
 					name="role" value="<c:out value="${user.role}" />"
-					placeholder="Role" />
+					readonly="readonly" placeholder="Auto Generates" />
 			</div>
 			<br>
 		
+			 <div>
+				<label for="password">Set Password:</label> <input type="text"
+				class="form-control"
+					name="password" value="<c:out value="${user.password}" />"
+					placeholder="password" />
+			</div>
+		<br>
 	    <input type="submit" class="btn btn-info" value="Submit">
         <input type="reset" class="btn btn-info" value="Reset">
 	

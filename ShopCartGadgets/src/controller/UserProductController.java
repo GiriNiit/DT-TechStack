@@ -14,19 +14,19 @@ import com.company.dao.ProductDAOImplementation;
 import com.company.model.Product;
 
 
-@WebServlet("/ProductController")
-public class ProductController extends HttpServlet {
+@WebServlet("/UserProductController")
+public class UserProductController extends HttpServlet {
 	
 	private ProductDAO dao;
 	private static final long serialVersionUID = 1L;
-	public static final String lIST_PRODUCT = "/adminlistProduct.jsp";
-	public static final String INSERT_OR_EDIT = "/adminproduct.jsp";
+	public static final String lIST_PRODUCT = "/userproductlist.jsp";
+	public static final String INSERT_OR_EDIT = "/userproduct.jsp";
 	
 	/* public static final String UserlIST_PRODUCT = "/userproductlist.jsp";
 	public static final String UserINSERT_OR_EDIT = "/userproduct.jsp"; */
 	
        
-    public ProductController() {
+    public UserProductController() {
     	dao = new ProductDAOImplementation();
     }
 

@@ -71,8 +71,8 @@ public class AdminAddUser {
 
 	@Override
 	public String toString() {
-		return "User1 [userId=" + userId + ", userName=" + userName
-				+ ", password=" + password + "]";
+		return "User [userId=" + userId + ", userName=" + userName
+				+ ", password=" + password + ", role=" +role +"]";
 	}
 		
 }

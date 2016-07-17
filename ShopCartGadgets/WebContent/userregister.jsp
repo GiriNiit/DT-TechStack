@@ -150,12 +150,21 @@
 </div><br>
 
 <div>
-<label for="authentication">Authentication:</label> 
+<label for="requestaccess">Request for Access*:</label> 
 
-<input type="radio" name="authentication" value="admin" > Admin
-  <input type="radio" name="authentication" value="user"> User
-  <c:out value="${register.authentication}" />
+<input type="radio" name="requestaccess" value="admin" > Admin
+  <input type="radio" name="requestaccess" value="user"> User
+  <c:out value="${register.requestaccess}" />
 </div><br>
+
+<div>
+				<label for="userName">User Name:</label> <input type="text"
+				class="form-control"
+					name="userName" value="<c:out value="${register.userName}" />"
+					placeholder="User Name" />
+			</div>
+			<br>
+
 
 </form>
 <br>

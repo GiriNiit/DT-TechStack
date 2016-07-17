@@ -8,7 +8,7 @@ public interface ProductDAO {
 	public void addProduct( Product product );
 	public void deleteProduct( int productId );
 	public void updateProduct( Product product );
-	public List<Product> getAllProductss();
+	public List<Product> getAllProducts();
 	public Product getProductById( int productId );
-	List<Product> getAllProducts();
+	
 }

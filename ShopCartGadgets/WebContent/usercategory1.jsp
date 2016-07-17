@@ -65,13 +65,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="productindex.jsp">Products</a></li>
+        <li><a href="useronline.jsp">Home</a></li>
+        <li><a href="userproduct.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="categoryindex.jsp">Category</a></li>
-        <li><a href="supplierindex.jsp">Supplier</a></li>
-          <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>  
+               <li><a href="usercategory.jsp">Category</a></li>
+       <!--   <li><a href="supplier.jsp">Supplier</a></li>-->
+          <li><a href="userstores.jsp">Stores</a></li>
+        <li><a href="usercontact.jsp">Contact</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -81,12 +81,11 @@
     
       <li><a><span class="glyphicon welcome">
 	  </span><font color="white">Welcome!</font></a></li>
-
 	  
 	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"style="padding-right: 4px";>
 	  </span>SignIn</a></li>
 	  
-	 <li><a href="adminregister.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
+	 <li><a href="userregister.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
 	  </span>Register</a></li>
 	  
 	 </ul>
@@ -100,52 +99,36 @@
 <div class="container">
   <h3><strong>Category</strong></h3>
   
-    <form action="CategoryController.do" method="post">
-		<fieldset>
-			<div>
-				<label for="categoryId">Category ID:</label> <input type="text"
-					class="form-control"
-					name="categoryId" value="<c:out value="${category.categoryId}" />"
-					readonly="readonly" placeholder="Auto Generates" />
-			</div> <br>
-			<div>
-				<label for="categoryName">Category Name:</label> <input type="text"
-					class="form-control"
-					name="categoryName" value="<c:out value="${category.categoryName}" />"
-					placeholder="Category Name" />
-			</div><br>
-			<div>
-				<label for="categoryDescription">Category Description:</label> <input type="text"
-					class="form-control"
-					name="categoryDescription" value="<c:out value="${category.categoryDescription}" />"
-					placeholder="CategoryDescription" />
-			</div>
-			<br>
-			<div>
-				<label for="productId">Product ID:</label> <input type="text"
-					class="form-control"
-					name="productId" value="<c:out value="${category.productId}" />"
-					 placeholder="Auto Generates" />
-			</div> <br>
-			
-			<div>
-				<label for="supplierId">Supplier ID:</label> <input type="text"
-					class="form-control"
-					name="supplierId" value="<c:out value="${category.supplierId}" />"
-					placeholder="Auto Generates" />
-			</div> <br>
-			
-			<div>
-			<input type="submit" class="btn btn-info" value="Submit" />
-				
-			</div>
-		</fieldset>
-	</form>
-
-<br>
-<br><br>
-
+   <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+  <a href="usercategoryindex.jsp">
   
+  <div class="panel-body"><img src="Images/pic22.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
+  </div>
+    </div></div>
+   <div class="col-sm-4">
+      <div class="panel panel-danger">
+   <div class="panel-body"><img src="Images/pic24.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
+  </div>
+    </div>
+    </div>
+    
+   <div class="col-sm-4">
+      <div class="panel panel-danger">
+   <div class="panel-body"><img src="Images/pic25.jpg" class="img-responsive" style="width:80%" alt="Image"><br>
+	</div>
+    </div></div>
+	 <div class="col-sm-4">
+      <div class="panel panel-danger">
+	 <div class="panel-body"><img src="Images/pic26.jpg" class="img-responsive" style="width:180%" alt="Image"><br>
+	  </div>
+    </div></div>
+	   <div class="col-sm-4">
+      <div class="panel panel-danger">
+	  <div class="panel-body"><img src="Images/pic27.jpg" class="img-responsive" style="width:60%" alt="Image"><br>
+	  </div></div></div></div></div></div></a>
 </div>
 
 <footer class="container-fluid text-center">

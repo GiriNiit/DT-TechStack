@@ -22,11 +22,14 @@ public class CategoryDAOImplementation implements CategoryDAO {
 	@Override
 	public void addCategory( Category category ) {
 		try {
-			String query = "insert into CATEGORY ( cateName, cateDescription) values (?,?)";
+			String query = "insert into CATEGORY ( categoryName, categoryDescription, productId, supplierId) values (?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 			//preparedStatement.setInt( 1, category.getCategoryId() );
-			preparedStatement.setString( 1, category.getCateName() );
-			preparedStatement.setString( 2, category.getCateDescription() );
+			preparedStatement.setString( 1, category.getCategoryName() );
+			preparedStatement.setString( 2, category.getCategoryDescription() );
+			preparedStatement.setInt( 3, category.getProductId() );
+			preparedStatement.setInt( 4, category.getSupplierId() );
+			
 						
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
@@ -49,11 +52,14 @@ public class CategoryDAOImplementation implements CategoryDAO {
 	@Override
 	public void updateCategory( Category category ) {
 		try {
-			String query = "update Category set cateName=?, cateDescription=?  where categoryId=?";
+			String query = "update Category set categoryName=?, categoryDescription=?, productId=?, supplierId=? where categoryId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
-			preparedStatement.setString( 1, category.getCateName() );
-			preparedStatement.setString( 2, category.getCateDescription() );
-			preparedStatement.setInt(3, category.getCategoryId());
+			preparedStatement.setString( 1, category.getCategoryName() );
+			preparedStatement.setString( 2, category.getCategoryDescription() );
+			preparedStatement.setInt(3, category.getProductId());
+			preparedStatement.setInt(4, category.getSupplierId());
+			preparedStatement.setInt(5, category.getCategoryId());
+
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -69,8 +75,10 @@ public class CategoryDAOImplementation implements CategoryDAO {
 			while( resultSet.next() ) {
 				Category category = new Category();
 				category.setCategoryId( resultSet.getInt( "categoryId" ) );
-				category.setCateName( resultSet.getString( "cateName" ) );
-				category.setCateDescription( resultSet.getString( "cateDescription" ) );
+				category.setCategoryName( resultSet.getString( "categoryName" ) );
+				category.setCategoryDescription( resultSet.getString( "categoryDescription" ) );
+				category.setProductId( resultSet.getInt( "productId" ) );
+				category.setSupplierId( resultSet.getInt( "supplierId" ) );
 				
 				categorys.add(category);
 			}
@@ -91,8 +99,10 @@ public class CategoryDAOImplementation implements CategoryDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while( resultSet.next() ) {
 				category.setCategoryId( resultSet.getInt( "categoryId" ) );
-				category.setCateName( resultSet.getString( "cateName" ) );
-				category.setCateDescription( resultSet.getString( "cateDescription" ) );
+				category.setCategoryName( resultSet.getString( "categoryName" ) );
+				category.setCategoryDescription( resultSet.getString( "categoryDescription" ) );
+				category.setProductId( resultSet.getInt( "productId" ) );
+				category.setSupplierId( resultSet.getInt( "supplierId" ) );
 							}
 			resultSet.close();
 			preparedStatement.close();

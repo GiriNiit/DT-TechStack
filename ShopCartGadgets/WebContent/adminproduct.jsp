@@ -65,14 +65,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
-        
+        <li><a href="admincontact.jsp">Contact</a></li>          
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!--  <li><a href="I/myaccount.jsp"><span class="glyphicon glyphicon-user">
@@ -93,11 +92,12 @@
   </div>
 </nav>
 
-
 <body>
 
 <div class="container">
-  <h2><strong>Products<strong></h2>
+  
+  <h3><strong>Add Products</strong></h3>
+  
 
 <form action="ProductController.do" method="post">
 		<fieldset>
@@ -108,31 +108,36 @@
 					readonly="readonly" placeholder="Auto Generates" />
 			</div><br>
 			<div>
-				<label for="proName">ProName:</label> <input type="text"
+				<label for="productName">Product Name:</label> <input type="text"
 					class="form-control"
-					name="proName" value="<c:out value="${product.proName}" />"
+					name="productName" value="<c:out value="${product.productName}" />"
 					placeholder="Product Name" />
 			</div><br>
 			<div>
-				<label for="proDescription">ProDescription:</label> <input type="text"
+				<label for="productDescription">Product Description:</label> <input type="text"
 					class="form-control"
-					name="proDescription" value="<c:out value="${product.proDescription}" />"
-					placeholder="ProDescription" />
+					name="productDescription" value="<c:out value="${product.productDescription}" />"
+					placeholder="ProductDescription" />
 			</div><br>
 			
 			<div>
-				<label for="proPrice">ProPrice:</label> <input type="text"
+				<label for="categoryId">Category ID:</label> <input type="text"
 					class="form-control"
-					name="proPrice" value="<c:out value="${product.proPrice}" />"
-					placeholder="ProPrice" />
+					name="categoryId" value="<c:out value="${product.categoryId}" />"
+					 placeholder="Auto Generates" />
+			</div><br>		
+			<div>
+				<label for="productQuantity">Product Quantity:</label> <input type="number"
+					class="form-control"
+					name="productQuantity" value="<c:out value="${product.productQuantity}" />"
+					placeholder="Product Quantity" />
 			</div><br>
 			<div>
-				<label for="proQuantity">ProQuantity:</label> <input type="text"
+				<label for="productPrice">Product Price:</label> <input type="number"
 					class="form-control"
-					name="proQuantity" value="<c:out value="${product.proQuantity}" />"
-					placeholder="ProQuantity" />
-			</div><br>
-			
+					name="productPrice" value="<c:out value="${product.productPrice}" />"
+					placeholder="Product Price" />
+			</div><br>	
 			
 			<br>
 			<div>
@@ -141,73 +146,18 @@
 			</div><br>
 		</fieldset>
 	</form>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-      
-  <form action="online.jsp">
-  <fieldset>
-  
-  <div class="panel-body"><img src="Images/pic22.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
-  </div>
-    </div></div>
-   <div class="col-sm-4">
-      <div class="panel panel-danger">
-   <div class="panel-body"><img src="Images/pic24.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
-  </div>
-    </div>
-    </div>
-    
-   <div class="col-sm-4">
-      <div class="panel panel-danger">
-   <div class="panel-body"><img src="Images/pic25.jpg" class="img-responsive" style="width:80%" alt="Image"><br>
-	</div>
-    </div></div>
-	 <div class="col-sm-4">
-      <div class="panel panel-danger">
-	 <div class="panel-body"><img src="Images/pic26.jpg" class="img-responsive" style="width:180%" alt="Image"><br>
-	  </div>
-    </div></div>
-	   <div class="col-sm-4">
-      <div class="panel panel-danger">
-	  <div class="panel-body"><img src="Images/pic27.jpg" class="img-responsive" style="width:60%" alt="Image"><br>
-	  </div>
-    </div></div>
-	   <div class="col-sm-4">
-      <div class="panel panel-danger">
-	   <div class="panel-body"><img src="Images/pic28.jpg" class="img-responsive" style="width:100%" alt="Image"><br>
-	    </div>
-    </div></div>
-	     <div class="col-sm-4">
-      <div class="panel panel-danger">
-	    <div class="panel-body"><img src="Images/pic29.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
-		 </div>
-    </div></div>
-		  <div class="col-sm-4">
-      <div class="panel panel-danger">
-		 <div class="panel-body"><img src="Images/pic30.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
-		 </div>
-    </div></div>
-		 
-		  <div class="col-sm-4">
-      <div class="panel panel-danger"> 
-      	   <div class="panel-body"><img src="Images/pic31.jpg" class="img-responsive" style="width:140%" alt="Image"><br>
-			 </div>
-    </div></div>
-		   </div>
-		   
-		 </div></div>
-		 	 </form>
-		 </fieldset>
+</body>
+
+
 	
 <footer class="container-fluid text-center">
   <p>Shopping Cart Copyright 2016.<br>All Rights Reserved.</p>
   
   
 </footer>
-</body>
+
 
 </html>
 

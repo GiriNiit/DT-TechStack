@@ -22,11 +22,19 @@ public class SupplierDAOImplementation implements SupplierDAO {
 	@Override
 	public void addSupplier( Supplier supplier ) {
 		try {
-			String query = "insert into SUPPLIER (supName, supAddress) values (?,?)";
+		//	String query = "insert into SUPPLIER (supplierName, supplierAddress, supplierContact, productId, categoryId, categoryName) values (?,?,?,?,?,?)";
+			
+			String query = "insert into SUPPLIER (supplierName, supplierAddress, supplierContact,productId,categoryId,  categoryName) values (?,?,?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 //			preparedStatement.setInt( 1, supplier.getSupplierId() );
-			preparedStatement.setString( 1, supplier.getSupName() );
-			preparedStatement.setString( 2, supplier.getSupAddress() );
+			preparedStatement.setString( 1, supplier.getSupplierName() );
+			preparedStatement.setString( 2, supplier.getSupplierAddress() );
+			preparedStatement.setInt( 3, supplier.getSupplierContact() );
+			preparedStatement.setInt( 4, supplier.getProductId() );
+		  preparedStatement.setInt( 5, supplier.getCategoryId() );
+			preparedStatement.setString( 6, supplier.getCategoryName() );
+       		
+			
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -48,11 +56,16 @@ public class SupplierDAOImplementation implements SupplierDAO {
 	@Override
 	public void updateSupplier( Supplier supplier ) {
 		try {
-			String query = "update Supplier set supName=?, supAddress=?  where supplierId=?";
+			//String query = "update Supplier set supplierName=?, supplierAddress=?, supplierContact=?, productId=?, categoryId=?, categoryName=?  where supplierId=?";
+			String query = "update Supplier set supplierName=?, supplierAddress=?, supplierContact=?,  categoryName=?, productId=?, categoryId=? where supplierId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
-			preparedStatement.setString( 1, supplier.getSupName() );
-			preparedStatement.setString( 2, supplier.getSupAddress() );
-			preparedStatement.setInt(3, supplier.getSupplierId());
+			preparedStatement.setString( 1, supplier.getSupplierName() );
+			preparedStatement.setString( 2, supplier.getSupplierAddress() );
+			preparedStatement.setInt( 3, supplier.getSupplierContact() );
+		 preparedStatement.setInt( 5, supplier.getProductId() );
+		preparedStatement.setInt( 6, supplier.getCategoryId() );
+			preparedStatement.setString( 4, supplier.getCategoryName() );
+     		preparedStatement.setInt(7, supplier.getSupplierId());
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -68,8 +81,13 @@ public class SupplierDAOImplementation implements SupplierDAO {
 			while( resultSet.next() ) {
 				Supplier supplier = new Supplier();
 				supplier.setSupplierId( resultSet.getInt( "supplierId" ) );
-				supplier.setSupName( resultSet.getString( "supName" ) );
-				supplier.setSupAddress( resultSet.getString( "supAddress" ) );
+				supplier.setSupplierName( resultSet.getString( "supplierName" ) );
+				supplier.setSupplierAddress( resultSet.getString( "supplierAddress" ) );
+				supplier.setSupplierContact( resultSet.getInt( "supplierContact" ) );
+				supplier.setProductId( resultSet.getInt( "productId" ) );
+				supplier.setCategoryId( resultSet.getInt( "categoryId" ) );
+				supplier.setCategoryName( resultSet.getString( "categoryName" ) );
+				
 				
 				suppliers.add(supplier);
 			}
@@ -90,9 +108,14 @@ public class SupplierDAOImplementation implements SupplierDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while( resultSet.next() ) {
 				supplier.setSupplierId( resultSet.getInt( "supplierId" ) );
-				supplier.setSupName( resultSet.getString( "supName" ) );
-				supplier.setSupAddress ( resultSet.getString( "supAddress" ) );
-							}
+				supplier.setSupplierName( resultSet.getString( "supplierName" ) );
+				supplier.setSupplierAddress ( resultSet.getString( "supplierAddress" ) );
+				supplier.setSupplierContact( resultSet.getInt( "supplierContact" ) );
+				supplier.setProductId( resultSet.getInt( "productId" ) );
+				supplier.setCategoryId( resultSet.getInt( "categoryId" ) );
+				supplier.setCategoryName( resultSet.getString( "categoryName" ) );
+				
+			}
 			resultSet.close();
 			preparedStatement.close();
 		} catch (SQLException e) {

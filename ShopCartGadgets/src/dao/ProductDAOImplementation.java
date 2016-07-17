@@ -22,14 +22,16 @@ public class ProductDAOImplementation implements ProductDAO {
 	@Override
 	public void addProduct( Product product ) {
 		try {
-			String query = "insert into PRODUCT (proName, proDescription, proPrice, proQuantity) values (?,?,?,?)";
+			String query = "insert into PRODUCT (productName, productDescription, categoryId, productQuantity, productPrice) values (?,?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 			//preparedStatement.setInt( 1, product.getProductId() );
-			preparedStatement.setString( 1, product.getProName() );
-			preparedStatement.setString( 2, product.getProDescription() );
-			preparedStatement.setInt( 3, product.getProPrice() );
-			preparedStatement.setInt( 4, product.getProQuantity() );
-			
+			preparedStatement.setString( 1, product.getProductName() );
+			preparedStatement.setString( 2, product.getProductDescription() );
+			preparedStatement.setInt( 3, product.getCategoryId() );
+			preparedStatement.setInt( 4, product.getProductQuantity() );
+			preparedStatement.setInt( 5, product.getProductPrice() );
+
+									
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -37,11 +39,11 @@ public class ProductDAOImplementation implements ProductDAO {
 		}
 	}
 	@Override
-	public void deleteProduct( int ProductId ) {
+	public void deleteProduct( int productId ) {
 		try {
 			String query = "delete from Product where productId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
-			preparedStatement.setInt(1, ProductId);
+			preparedStatement.setInt(1, productId);
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -51,13 +53,15 @@ public class ProductDAOImplementation implements ProductDAO {
 	@Override
 	public void updateProduct( Product product ) {
 		try {
-			String query = "update Product set proName=?, proDescription=?, proPrice=?, proQuantity=?  where productId=?";
+			String query = "update Product set productName=?, productDescription=?, categoryId=?, productQuantity=?, productPrice=?  where productId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
-			preparedStatement.setString( 1, product.getProName() );
-			preparedStatement.setString( 2, product.getProDescription() );
-			preparedStatement.setInt( 3, product.getProPrice() );
-			preparedStatement.setInt( 4, product.getProQuantity() );
-			preparedStatement.setInt(5, product.getProductId() );
+			preparedStatement.setString( 1, product.getProductName() );
+			preparedStatement.setString( 2, product.getProductDescription() );
+			preparedStatement.setInt( 3, product.getCategoryId() );
+			preparedStatement.setInt( 4, product.getProductQuantity() );
+			preparedStatement.setInt( 5, product.getProductPrice() );
+			preparedStatement.setInt(6, product.getProductId() );
+			
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -73,10 +77,13 @@ public class ProductDAOImplementation implements ProductDAO {
 			while( resultSet.next() ) {
 				Product product = new Product();
 				product.setProductId( resultSet.getInt( "productId" ) );
-				product.setProName( resultSet.getString( "proName" ) );
-				product.setProDescription( resultSet.getString( "proDescription" ) );
-				product.setProPrice( resultSet.getInt( "proPrice" ) );
-				product.setProQuantity( resultSet.getInt( "proQuantity" ) );
+				product.setProductName( resultSet.getString( "productName" ) );
+				product.setProductDescription( resultSet.getString( "productDescription" ) );
+				product.setCategoryId( resultSet.getInt( "categoryId" ) );
+				product.setProductQuantity( resultSet.getInt( "productQuantity" ) );
+				product.setProductPrice( resultSet.getInt( "productPrice" ) );
+
+
 				products.add(product);
 			}
 			resultSet.close();
@@ -96,10 +103,11 @@ public class ProductDAOImplementation implements ProductDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while( resultSet.next() ) {
 				product.setProductId( resultSet.getInt( "productId" ) );
-				product.setProName( resultSet.getString( "proName" ) );
-				product.setProDescription( resultSet.getString( "proDescription" ) );
-				product.setProPrice( resultSet.getInt( "proPrice" ) );
-				product.setProQuantity( resultSet.getInt( "proQuantity" ) );
+				product.setProductName( resultSet.getString( "productName" ) );
+				product.setProductDescription( resultSet.getString( "productDescription" ) );
+				product.setCategoryId( resultSet.getInt( "categoryId" ) );
+				product.setProductQuantity( resultSet.getInt( "productQuantity" ) );
+				product.setProductPrice( resultSet.getInt( "productPrice" ) );
 			}
 			resultSet.close();
 			preparedStatement.close();
@@ -108,10 +116,6 @@ public class ProductDAOImplementation implements ProductDAO {
 		}
 		return product;
 	}
-	@Override
-	public List<Product> getAllProductss() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

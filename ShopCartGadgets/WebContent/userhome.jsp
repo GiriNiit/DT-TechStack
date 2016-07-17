@@ -60,9 +60,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="useronline.jsp">Home</a></li>
-        <li><a href="userproduct.jsp">Products</a></li>
+        <li><a href="userproduct1.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="usercategory.jsp">Category</a></li>
+               <li><a href="usercategory1.jsp">Category</a></li>
        <!--   <li><a href="supplier.jsp">Supplier</a></li>-->
           <li><a href="userstores.jsp">Stores</a></li>
         <li><a href="usercontact.jsp">Contact</a></li>        

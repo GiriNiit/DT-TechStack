@@ -25,7 +25,7 @@ public class AdminRegisterDAOImplementation implements AdminRegisterDAO {
 	@Override
 	public void addRegister( AdminRegister register ) {
 		try {
-			String query = "insert into REGISTER ( firstName, lastName, email, dob, gender, authentication) values (?,?,?,?,?,?)";
+			String query = "insert into REGISTER ( firstName, lastName, email, dob, gender, requestaccess, userName) values (?,?,?,?,?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 			//preparedStatement.setInt( 1, register.getRegisterId() );
 			preparedStatement.setString( 1, register.getFirstName() );
@@ -33,7 +33,8 @@ public class AdminRegisterDAOImplementation implements AdminRegisterDAO {
 			preparedStatement.setString( 3, register.getEmail() );
 			preparedStatement.setString( 4, register.getDob() );
 			preparedStatement.setString( 5, register.getGender() );
-			preparedStatement.setString( 6, register.getAuthentication() );
+			preparedStatement.setString( 6, register.getRequestaccess() );
+			preparedStatement.setString( 7, register.getUserName() );
 
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
@@ -56,15 +57,16 @@ public class AdminRegisterDAOImplementation implements AdminRegisterDAO {
 	@Override
 	public void updateRegister( AdminRegister register ) {
 		try {
-			String query = "update Register set firstName=?, lastName=?, email=?, dob=?, gender=? where registerId=?";
+			String query = "update Register set firstName=?, lastName=?, email=?, dob=?, gender=?, requestaccess=?, userName=? where registerId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 			preparedStatement.setString( 1, register.getFirstName() );
 			preparedStatement.setString( 2, register.getLastName() );
 			preparedStatement.setString( 3, register.getEmail() );
 			preparedStatement.setString( 4, register.getDob() );
 			preparedStatement.setString( 5, register.getGender() );
-			preparedStatement.setString( 6, register.getAuthentication() );
-			preparedStatement.setInt(7, register.getRegisterId());
+			preparedStatement.setString( 6, register.getRequestaccess() );
+			preparedStatement.setString( 7, register.getUserName() );
+			preparedStatement.setInt(8, register.getRegisterId());
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {
@@ -85,7 +87,8 @@ public class AdminRegisterDAOImplementation implements AdminRegisterDAO {
 				register.setEmail( resultSet.getString( "email" ) );
 				register.setDob( resultSet.getString( "dob" ) );
 				register.setGender( resultSet.getString( "gender" ) );
-				register.setAuthentication( resultSet.getString( "authentication" ) );
+				register.setRequestaccess( resultSet.getString( "requestaccess" ) );
+				register.setUserName( resultSet.getString( "userName" ) );
 				registers.add(register);
 			}
 			resultSet.close();
@@ -110,7 +113,8 @@ public class AdminRegisterDAOImplementation implements AdminRegisterDAO {
 				register.setEmail( resultSet.getString( "email" ) );
 				register.setDob( resultSet.getString( "dob" ) );
 				register.setGender( resultSet.getString( "gender" ) );
-				register.setAuthentication( resultSet.getString( "authentication" ) );
+				register.setRequestaccess( resultSet.getString( "requestaccess" ) );
+				register.setUserName( resultSet.getString( "userName" ) );
 
 			}
 			resultSet.close();

@@ -105,6 +105,9 @@
 				<th>Category ID</th> 
 				<th>CateName</th><br>
 				<th>CateDescription</th><br>
+				<th>Product ID</th> <br>
+				<th>Supplier ID</th> <br>
+				
 				
 				<th colspan="2">Action</th>
 			</tr>
@@ -113,15 +116,17 @@
 			<c:forEach items="${categorys}" var="category">
 				<tr>
 					  <td><c:out value="${category.categoryId}" /></td>
-					<td><c:out value="${category.cateName}" /></td>
-					<td><c:out value="${category.cateDescription}" /></td>
+					<td><c:out value="${category.categoryName}" /></td>
+					<td><c:out value="${category.categoryDescription}" /></td>
+					<td><c:out value="${category.productId}" /></td>
+					<td><c:out value="${category.supplierId}" /></td>
 					
 					<td><a
 						href="CategoryController.do?action=edit&categoryId=<c:out value="${category.categoryId }"/>">
-						<input type="submit" class="btn btn-info" value="Update" /></a></td>
+						<input type="submit" class="btn btn-success" value="Update" /></a></td>
 					<td><a
 						href="CategoryController.do?action=delete&categoryId=<c:out value="${category.categoryId }"/>">
-						<input type="submit" class="btn btn-info" value="Delete" /></a></td>
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

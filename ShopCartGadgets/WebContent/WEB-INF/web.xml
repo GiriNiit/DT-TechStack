@@ -3,7 +3,6 @@
   <display-name>CRUD Project</display-name>
   <welcome-file-list>
     <welcome-file>useronline.jsp</welcome-file>
-    <welcome-file>totalindex.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>ProductController</servlet-name>
@@ -12,6 +11,14 @@
   <servlet-mapping>
     <servlet-name>ProductController</servlet-name>
     <url-pattern>/ProductController.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>UserProductController</servlet-name>
+    <servlet-class>com.company.controller.UserProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserProductController</servlet-name>
+    <url-pattern>/UserProductController.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>UserRegisterController</servlet-name>
@@ -36,6 +43,14 @@
   <servlet-mapping>
     <servlet-name>CategoryController</servlet-name>
     <url-pattern>/CategoryController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserCategoryController</servlet-name>
+    <servlet-class>com.company.controller.UserCategoryController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserCategoryController</servlet-name>
+    <url-pattern>/UserCategoryController.do</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>SupplierController</servlet-name>
@@ -68,5 +83,21 @@
   <servlet-mapping>
     <servlet-name>AdminRegisterController</servlet-name>
     <url-pattern>/AdminRegisterController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminManageController</servlet-name>
+    <servlet-class>com.company.controller.AdminManageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminManageController</servlet-name>
+    <url-pattern>/AdminManageController.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminSetController</servlet-name>
+    <servlet-class>com.company.controller.AdminSetController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminSetController</servlet-name>
+    <url-pattern>/AdminSetController.do</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -65,14 +65,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
-        
+        <li><a href="admincontact.jsp">Contact</a></li>          
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -86,7 +85,7 @@
 	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"style="padding-right: 4px";>
 	  </span>SignIn</a></li>
 	  
-	 <li><a href="adminregister.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
+	 <li><a href="adminregisterindex.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
 	  </span>Register</a></li>
 	 </ul>
     </div>
@@ -153,12 +152,20 @@
 
 	    
 	    <div>
-<label for="authentication">Authentication:</label> 
+<label for="requestaccess">Request for Access*:</label> 
 
-<input type="radio" name="authentication" value="admin" > Admin
-  <input type="radio" name="authentication" value="user"> User
-  <c:out value="${register.authentication}" />
+<input type="radio" name="requestaccess" value="admin" > Admin
+  <input type="radio" name="requestaccess" value="user"> User
+  <c:out value="${register.requestaccess}" />
 </div><br>
+
+<div>
+				<label for="userName">User Name:</label> <input type="text"
+				class="form-control"
+					name="userName" value="<c:out value="${register.userName}" />"
+					placeholder="User Name" />
+			</div>
+			<br>
 
 	<a href="Congrats.jsp">
     <input type="submit" class="btn btn-info" value="Submit">

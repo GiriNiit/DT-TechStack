@@ -99,7 +99,7 @@
     
 <br>
 
-<form action="AdminRegisterController.do" method="post">
+<form action="UserEditRegisterController.do" method="post">
 		<fieldset>
 			<div>
 			
@@ -115,7 +115,7 @@
 				<label for="firstName">First Name:</label> <input type="text"
 				class="form-control"
 					name="firstName" value="<c:out value="${register.firstName}" />"
-					placeholder="First Name" />
+					readonly="readonly" placeholder="First Name" />
 			</div>
 			<br>
 			
@@ -123,21 +123,22 @@
 				<label for="lastName">Last Name:</label> <input type="text"
 				class="form-control"
 					name="lastName" value="<c:out value="${register.lastName}" />"
-					placeholder="Last Name" />
+					readonly="readonly" placeholder="Last Name" />
 			</div>
 			<br>
 			
 			<div>
 				<label for="email">Email</label> <input type="text" name="email"
 				class="form-control"
-					value="<c:out value="${register.email}" />" placeholder="Email Id" />
+					value="<c:out value="${register.email}" />" 
+					placeholder="Email Id" />
 			</div>
 	<br>
 	<div>
 	<label for="dob">Date of Birth:</label> 
 
 <input type="date" name="dob"
-		value="<c:out value="${register.dob}" />"  />
+		value="<c:out value="${register.dob}" />" readonly="readonly" />
 </div>
 <br>
 
@@ -152,12 +153,20 @@
 
 	    
 	    <div>
-<label for="authentication">Authentication:</label> 
+<label for="requestaccess">Request for Access*:</label> 
 
-<input type="radio" name="authentication" value="admin" > Admin
-  <input type="radio" name="authentication" value="user"> User
-  <c:out value="${register.authentication}" />
+<input type="radio" name="requestaccess" value="admin" > Admin
+  <input type="radio" name="requestaccess" value="user"> User
+  <c:out value="${register.requestaccess}" />
 </div><br>
+
+<div>
+				<label for="userName">User Name:</label> <input type="text"
+				class="form-control"
+					name="userName" value="<c:out value="${register.userName}" />"
+					placeholder="User Name" />
+			</div>
+			<br>
 
 	<a href="Congrats.jsp">
     <input type="submit" class="btn btn-info" value="Submit">

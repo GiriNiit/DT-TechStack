@@ -49,7 +49,7 @@ public class AdminAddUserDAOImplementation implements AdminAddUserDAO {
 	@Override
 	public void updateUser( AdminAddUser user ) {
 		try {
-			String query = "update User set userName=?, password=? role=? where userId=?";
+			String query = "update User set userName=?, password=?, role=? where userId=?";
 			PreparedStatement preparedStatement = conn.prepareStatement( query );
 			preparedStatement.setString( 1, user.getUserName() );
 			preparedStatement.setString( 2, user.getPassword() );

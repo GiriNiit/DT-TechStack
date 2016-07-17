@@ -90,24 +90,31 @@
     </div>
   </div>
 </nav>
-
-
+<title> Products List:</title>
+</head>
 <body>
+
+
+
 	
 		<div class="container">
         <table class="table table-bordered">
+        
 
         
-            <caption><h2>Product Details</h2></caption>
-            <tr>
+            
+            
 			<thead>
 			<tr>
 
 				<th>Product ID</th>
-				<th>ProName</th>
-				<th>ProDescription</th>
-				<th>ProPrice</th>
-				<th>ProQuantity</th>
+				<th>Product Name</th>
+				<th>Product Description</th>
+				<th>Category ID</th>
+				<th>Product Quantity</th>
+				<th>Product Price</th>
+				
+				
 							
 				
 				<th colspan="2">Action</th>
@@ -117,17 +124,18 @@
 			<c:forEach items="${products}" var="product">
 				<tr>
 					<td><c:out value="${product.productId}" /></td>
-					<td><c:out value="${product.proName}" /></td>
-					<td><c:out value="${product.proDescription}" /></td>
-					<td><c:out value="${product.proPrice}" /></td>
-					<td><c:out value="${product.proQuantity}" /></td>
-					
+					<td><c:out value="${product.productName}" /></td>
+					<td><c:out value="${product.productDescription}" /></td>
+					<td><c:out value="${product.categoryId}" /></td>
+					<td><c:out value="${product.productQuantity}" /></td>
+					<td><c:out value="${product.productPrice}" /></td>
+										
 					<td><a
 						href="ProductController.do?action=edit&productId=<c:out value="${product.productId }"/>">
-						<input type="submit" class="btn btn-info" value="Update" /></a></td>
+						<input type="submit" class="btn btn-success" value="Update" /></a></td>
 					<td><a
 						href="ProductController.do?action=delete&productId=<c:out value="${product.productId }"/>">
-						<input type="submit" class="btn btn-info" value="Delete" /></a></td>
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -137,7 +145,7 @@
 		<input type="submit" class="btn btn-info" value="Add Product" /></a>
 	</p></div>
 </body>
-  
+  </body>
   <br><br>
   
 

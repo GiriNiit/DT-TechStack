@@ -47,11 +47,11 @@ public class ValidationUserController extends HttpServlet {
 
 			if (validUser) {
 				System.out.println("inside admin login");
+				if(userId.equals("admin")){
 				dispatcher = request.getRequestDispatcher("adminhome.jsp");
-				dispatcher.forward(request, response);
-			} else if (userId.equals("user")) {
-				System.out.println("inside user login");
+				}else{
 				dispatcher = request.getRequestDispatcher("userhome.jsp");
+				}
 				dispatcher.forward(request, response);
 			} else {
 				System.out.println("inside other users");
@@ -75,21 +75,25 @@ public class ValidationUserController extends HttpServlet {
 			
 			String adminDbUser = userDao.getUserByName(userId).getUserName();
 			String adminDbPassword = userDao.getUserByName(userId).getPassword();
+			/*
+			String genDbUser = userDao.getUserByName(userId).getUserName();
+			String genDbPassword = userDao.getUserByName(userId).getPassword();
+			*/
+			System.out.println("adminDbUser "+adminDbUser +"adminDbPassword "+ adminDbPassword );
+//			
+//			System.out.println("genDbUser "+genDbUser +"genDbPassword "+ genDbPassword );
 			
-			String genDbUser = userDao.getUserById(33).getUserName();
-			String genDbPassword = userDao.getUserById(33).getPassword();
 			
-			System.out.println("adminDbUser "+genDbUser +"adminDbPassword "+ genDbPassword );
-			
-			System.out.println("genDbUser "+genDbUser +"genDbPassword "+ genDbPassword );
-			
-
-			if (userId.equals("admin") && password.equals("admin")) {
+			if (
+					((userId.equals("admin"))&&userId.equals(adminDbUser)) && ((password.equals("admin"))&&password.equals(adminDbPassword))
+					||
+					(userId.equals(adminDbUser) && password.equals(adminDbPassword))
+				) {
 				return true;
 			}
-			if (userId.equals(genDbUser) && password.equals(genDbPassword)) {
+			/*if (userId.equals(genDbUser) && password.equals(genDbPassword)) {
 				return false;
-			}
+			}*/
 
 			
 			return false;

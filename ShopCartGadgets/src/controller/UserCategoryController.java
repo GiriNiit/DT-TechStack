@@ -15,18 +15,18 @@ import com.company.dao.CategoryDAOImplementation;
 import com.company.model.Category;
 
 
-@WebServlet("/CategoryController")
-public class CategoryController extends HttpServlet {
+@WebServlet("/UserCategoryController")
+public class UserCategoryController extends HttpServlet {
 	
 	private CategoryDAO dao;
 	private static final long serialVersionUID = 1L;
-	public static final String lIST_CATEGORY = "/adminlistCategory.jsp";
-	public static final String INSERT_OR_EDIT = "/admincategory.jsp";
+	public static final String lIST_CATEGORY = "/usercategorylist.jsp";
+	public static final String INSERT_OR_EDIT = "/usercategory.jsp";
 	
 	/*public static final String UserlIST_CATEGORY = "/usercategorylist.jsp";
 	public static final String UserINSERT_OR_EDIT = "/usercategory.jsp";*/
        
-    public CategoryController() {
+    public UserCategoryController() {
     	dao = new CategoryDAOImplementation();
     }
 

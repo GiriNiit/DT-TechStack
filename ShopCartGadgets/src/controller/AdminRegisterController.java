@@ -64,7 +64,8 @@ public class AdminRegisterController extends HttpServlet {
 		register.setEmail( request.getParameter( "email" ) );
 		register.setDob( request.getParameter( "dob" ) );
 		register.setGender( request.getParameter( "gender" ) );
-		register.setAuthentication( request.getParameter( "authentication" ) );
+		register.setRequestaccess( request.getParameter( "requestaccess" ) );
+		register.setUserName( request.getParameter( "userName" ) );
 
 		String registerId = request.getParameter("registerId");
 		

@@ -64,13 +64,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
+        <li><a href="admincontact.jsp">Contact</a></li>  
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -97,16 +97,15 @@
 		<div class="container">
         <table class="table table-bordered">
         
-            <caption><h2>User Details</h2></caption>
-            <tr>
-	
+        
+         	
 		<thead>
 			<tr>
 			
 				<th>User ID</th>
 				<th>User Name</th>
-			<!--  	<th>Password</th>-->
-						<th>Role</th>
+				<th>Role</th>
+				<th>Password</th>
 								
 				
 				<th colspan="2">Action</th>
@@ -117,17 +116,18 @@
 				<tr>
 					<td><c:out value="${user.userId}" /></td>
 					<td><c:out value="${user.userName}" /></td>
-					<!-- <td><c:out value="${user1.password}" /></td> -->
 					<td><c:out value="${user.role}" /></td>
+				    <td><c:out value="${user.password}" /></td> 
+					
 										
 										
 					<td><a
 						href="AdminAddUserController.do?action=edit&userId=<c:out value="${user.userId }"/>">
-						<input type="submit" class="btn btn-info" value="Update" /></a></td>
+						<input type="submit" class="btn btn-success" value="Set Password" /></a></td>
 						
 					<td><a
 						href="AdminAddUserController.do?action=delete&userId=<c:out value="${user.userId }"/>">
-						<input type="submit" class="btn btn-info" value="Delete" /></a></td>
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td>
 						
 				</tr>
 			</c:forEach>
@@ -135,10 +135,11 @@
 	</table>
 	
 	<p>
-		<a href="AdminAddUserController.do?action=insert">
+	<!--  	<a href="AdminAddUserController.do?action=insert">
 		<input type="submit" class="btn btn-info" value="Add User" /></a>
 		
-	</p></div>
+	</p>-->
+	</div>
 
   </body>
   <br><br>

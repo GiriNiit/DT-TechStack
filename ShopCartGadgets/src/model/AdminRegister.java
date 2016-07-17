@@ -11,17 +11,10 @@ public class AdminRegister {
 	private String email;
 	private String dob;
 	private String gender;
-	private String authentication;
+	private String requestaccess;
+	private String userName;
 
-	public String getAuthentication() {
-		return authentication;
-	}
-
-
-	public void setAuthentication(String authentication) {
-		this.authentication = authentication;
-	}
-
+	
 
 	public int getRegisterId() {
 		return registerId;
@@ -87,6 +80,14 @@ public class AdminRegister {
 		this.gender = gender;
 	}
 
+	public String getRequestaccess() {
+		return requestaccess;
+	}
+
+
+	public void setRequestaccess(String requestaccess) {
+		this.requestaccess = requestaccess;
+	}
 
 		
 	
@@ -94,7 +95,19 @@ public class AdminRegister {
 	public String toString() {
 		return "Register [registerId=" + registerId + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", email=" + email + ", dob="
-				+ dob + ",  gender=" + gender + "]";
+				+ dob + ",  gender=" + gender + ",  requestaccess=" + requestaccess + ",  userName=" + userName + "]";
 	}
-		
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+			
 }

@@ -64,13 +64,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
+        <li><a href="admincontact.jsp">Contact</a></li>  
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -97,24 +97,57 @@
   <h2><strong>Supplier</strong></h2>
 
   <form action="SupplierController.do" method="post">
+  
+ 
 		<fieldset>
+		
 			<div>
 				<label for="supplierId">Supplier ID:</label> <input type="text"
 					class="form-control"
 					name="supplierId" value="<c:out value="${supplier.supplierId}" />"
 					readonly="readonly" placeholder="Supplier ID" />
 			</div>
+			<br>
 			<div>
-				<label for="supName">Sup Name:</label> <input type="text"
+				<label for="supplierName">Supplier Name:</label> <input type="text"
 					class="form-control"
-					name="supName" value="<c:out value="${supplier.supName}" />"
+					name="supplierName" value="<c:out value="${supplier.supplierName}" />"
 					placeholder="Supplier Name" />
 			</div>
+			<br>
 			<div>
-				<label for="supAddress">Sup Address:</label> <input type="text"
+				<label for="supplierAddress">Supplier Address:</label> <input type="text"
 					class="form-control"
-					name="supAddress" value="<c:out value="${supplier.supAddress}" />"
-					placeholder="Sup Address" />
+					name="supplierAddress" value="<c:out value="${supplier.supplierAddress}" />"
+					placeholder="Supplier Address" />
+			</div>
+			<br>
+			<div>
+				<label for="supplierContact">Supplier Contact:</label> <input type="text"
+					class="form-control"
+					name="supplierContact" value="<c:out value="${supplier.supplierContact}" />"
+					placeholder="Supplier Contact" />
+			</div>
+			<br>
+			<div>
+				<label for="productId">Product ID:</label> <input type="text"
+					class="form-control"
+					name="productId" value="<c:out value="${supplier.productId}" />"
+					placeholder="Product Id" />
+			</div>
+			<br>
+			<div>
+				<label for="categoryId">Category ID:</label> <input type="text"
+					class="form-control"
+					name="categoryId" value="<c:out value="${supplier.categoryId}" />"
+					placeholder="Category Id" />
+			</div>
+			<br>
+			<div>
+				<label for="categoryName">Category Name:</label> <input type="text"
+					class="form-control"
+					name="categoryName" value="<c:out value="${supplier.categoryName}" />"
+					placeholder="Category Name" />
 			</div>
 			<br>
 			<div>

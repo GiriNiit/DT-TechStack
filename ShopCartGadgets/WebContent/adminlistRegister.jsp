@@ -64,14 +64,14 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
-        
+        <li><a href="admincontact.jsp">Contact</a></li>  
+                
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!--  <li><a href="I/myaccount.jsp"><span class="glyphicon glyphicon-user">
@@ -85,7 +85,7 @@
 	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"style="padding-right: 4px";>
 	  </span>SignIn</a></li>
 	  
-	 <li><a href="adminregister.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
+	 <li><a href="adminregisterindex.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
 	  </span>Register</a></li>
 	 </ul>
     </div>
@@ -110,7 +110,9 @@
 				<th>Email</th>
 				<th>DOB</th>
 				<th>Gender</th>
-				<th>Authentication</th>
+				<th>Request Access</th>
+				<th>User Name</th>
+				
 				
 				
 				<th colspan="2">Action</th>
@@ -125,16 +127,17 @@
 					<td><c:out value="${register.email}" /></td>
 					<td><c:out value="${register.dob}" /></td>
 					<td><c:out value="${register.gender}" /></td>
-					<td><c:out value="${register.authentication}" /></td>
+					<td><c:out value="${register.requestaccess}" /></td>
+					<td><c:out value="${register.userName}" /></td>
 					
 					<td><a
 						
 						href="AdminRegisterController.do?action=edit&registerId=<c:out value="${register.registerId }"/>">
-						<input type="submit" class="btn btn-info" value="Update" /></a></td>
+						<input type="submit" class="btn btn-success" value="Update" /></a></td>
 						
 					<td><a
 						href="AdminRegisterController.do?action=delete&registerId=<c:out value="${register.registerId }"/>">
-						<input type="submit" class="btn btn-info" value="Delete" /></a></td>
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td>
 						
 				</tr>
 			</c:forEach>

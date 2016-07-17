@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    
+     <%--<jsp:forward page="/ProductController?action=adminlistProduct"></jsp:forward>
     <jsp:forward page="/CategoryController?action=adminlistCategory"></jsp:forward>
     <jsp:forward page="/SupplierController?action=adminlistSupplier"></jsp:forward>
     <jsp:forward page="/ProductController?action=adminlistProduct"></jsp:forward>
@@ -16,6 +16,7 @@
 	<jsp:forward page="/UserRegisterController?action=userlistRegister"></jsp:forward>
 	<jsp:forward page="/UserEditRegisterController?action=usereditlistRegister"></jsp:forward>
 	<jsp:forward page="/AdminAddUserController?action=adminAddlistUser"></jsp:forward>
+	<jsp:forward page="/AdminAddUserController?action=adminmanageprofile"></jsp:forward> --%>
 	
 </body>
 </html> 

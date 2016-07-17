@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import com.company.dao.SupplierDAO;
 import com.company.dao.SupplierDAOImplementation;
 import com.company.model.Supplier;
@@ -20,7 +21,7 @@ public class SupplierController extends HttpServlet {
 	private SupplierDAO dao;
 	private static final long serialVersionUID = 1L;
 	public static final String lIST_SUPPLIER = "/adminlistSupplier.jsp";
-	public static final String INSERT_OR_EDIT = "/usersupplier.jsp";
+	public static final String INSERT_OR_EDIT = "/adminsupplier.jsp";
        
     public SupplierController() {
     	dao = new SupplierDAOImplementation();
@@ -55,10 +56,19 @@ public class SupplierController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Supplier supplier = new Supplier();
-		supplier.setSupName( request.getParameter( "supName" ) );
-		supplier.setSupAddress( request.getParameter( "supAddress" ) );
-		String supplierId = request.getParameter("supplierId");
 		
+		//supplier.setSupplierId( request.getInt( "supplierId" ) );
+		
+		supplier.setSupplierName( request.getParameter( "supplierName" ) );
+		supplier.setSupplierAddress ( request.getParameter( "supplierAddress" ) );
+		supplier.setSupplierContact( Integer.parseInt( request.getParameter( "supplierContact" ) ) );
+		supplier.setProductId( Integer.parseInt(request.getParameter( "productId" )));
+		supplier.setCategoryId( Integer.parseInt( request.getParameter( "categoryId" ) ) );
+		supplier.setCategoryName( request.getParameter( "categoryName" ) );
+		String supplierId = request.getParameter("supplierId");
+
+		
+				
 		if( supplierId == null || supplierId.isEmpty() ) 
 			dao.addSupplier(supplier);
 		else {

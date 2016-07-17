@@ -5,8 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <title>Online Shopping</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">  <title>Online Shopping</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -66,12 +65,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="productindex.jsp">Products</a></li>
+        <li><a href="adminproduct.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="categoryindex.jsp">Category</a></li>
-        <li><a href="supplierindex.jsp">Supplier</a></li>
+               <li><a href="admincategory.jsp">Category</a></li>
+        <li><a href="adminsupplier.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>  
+        <li><a href="admincontact.jsp">Contact</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -79,16 +78,14 @@
 	  </span> Your Account</a></li>
         <li><a href="I/cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>-->
     
-      <li><a><span class="glyphicon welcome">
+    <li><a><span class="glyphicon welcome">
 	  </span><font color="white">Welcome!</font></a></li>
-
 	  
 	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"style="padding-right: 4px";>
 	  </span>SignIn</a></li>
 	  
 	 <li><a href="adminregister.jsp"><span class="glyphicon glyphicon-user" style="padding-right: 4px";>
 	  </span>Register</a></li>
-	  
 	 </ul>
     </div>
   </div>
@@ -96,64 +93,64 @@
 
 
 <body>
-
-<div class="container">
-  <h3><strong>Category</strong></h3>
-  
-    <form action="CategoryController.do" method="post">
-		<fieldset>
-			<div>
-				<label for="categoryId">Category ID:</label> <input type="text"
-					class="form-control"
-					name="categoryId" value="<c:out value="${category.categoryId}" />"
-					readonly="readonly" placeholder="Auto Generates" />
-			</div> <br>
-			<div>
-				<label for="categoryName">Category Name:</label> <input type="text"
-					class="form-control"
-					name="categoryName" value="<c:out value="${category.categoryName}" />"
-					placeholder="Category Name" />
-			</div><br>
-			<div>
-				<label for="categoryDescription">Category Description:</label> <input type="text"
-					class="form-control"
-					name="categoryDescription" value="<c:out value="${category.categoryDescription}" />"
-					placeholder="CategoryDescription" />
-			</div>
-			<br>
-			<div>
-				<label for="productId">Product ID:</label> <input type="text"
-					class="form-control"
-					name="productId" value="<c:out value="${category.productId}" />"
-					 placeholder="Auto Generates" />
-			</div> <br>
-			
-			<div>
-				<label for="supplierId">Supplier ID:</label> <input type="text"
-					class="form-control"
-					name="supplierId" value="<c:out value="${category.supplierId}" />"
-					placeholder="Auto Generates" />
-			</div> <br>
-			
-			<div>
-			<input type="submit" class="btn btn-info" value="Submit" />
+	
+		
+		<div class="container">
+        <table class="table table-bordered">
+        
+            <caption><h2>Category Details</h2></caption>
+            <tr>
+			<thead>
+			<tr>
+				<th>Category ID</th> 
+				<th>CateName</th><br>
+				<th>CateDescription</th><br>
+				<!-- <th>Product ID</th> <br>
+				<th>Supplier ID</th> <br> 
 				
-			</div>
-		</fieldset>
-	</form>
-
-<br>
-<br><br>
-
+				
+				<th colspan="2">Action</th> -->
+				
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${categorys}" var="category">
+				<tr>
+					  <td><c:out value="${category.categoryId}" /></td>
+					<td><c:out value="${category.categoryName}" /></td>
+					<td><c:out value="${category.categoryDescription}" /></td>
+				<!-- 	<td><c:out value="${category.productId}" /></td>
+					<td><c:out value="${category.supplierId}" /></td> -->
+					
+					<!-- <td><a
+						href="CategoryController.do?action=edit&categoryId=<c:out value="${category.categoryId }"/>">
+						<input type="submit" class="btn btn-success" value="Update" /></a></td>
+					<td><a
+						href="CategoryController.do?action=delete&categoryId=<c:out value="${category.categoryId }"/>">
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td> -->
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<!-- <p>
+		<a href="CategoryController.do?action=insert">
+		<input type="submit" class="btn btn-info" value="Add Category" /></a>
+	</p>-->
+	</div>
+</body>
+</body>
   
-</div>
+  <br><br>
+  
 
 <footer class="container-fluid text-center">
-  <p>Shopping Cart Copyright 2016.<br>All Rights Reserved.</p>
+    <p>Shopping Cart Copyright 2016.<br>All Rights Reserved.</p>
   
 </footer>
 
+
+
+
+
 </body>
 </html>
-
-

@@ -64,14 +64,14 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="adminonline.jsp">Home</a></li>
-        <li><a href="adminproduct.jsp">Products</a></li>
+         <li><a href="adminonline.jsp">Home</a></li>
+        <li><a href="productindex.jsp">Products</a></li>
         <!-- <li><a href="Deals.jsp">Deals</a></li>-->
-               <li><a href="admincategory.jsp">Category</a></li>
-        <li><a href="adminsupplier.jsp">Supplier</a></li>
+               <li><a href="categoryindex.jsp">Category</a></li>
+        <li><a href="supplierindex.jsp">Supplier</a></li>
           <li><a href="adminstores.jsp">Stores</a></li>
-        <li><a href="admincontact.jsp">Contact</a></li>
-        
+        <li><a href="admincontact.jsp">Contact</a></li>  
+                
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!--  <li><a href="I/myaccount.jsp"><span class="glyphicon glyphicon-user">
@@ -106,8 +106,14 @@
 
 			
 				<th>Supplier ID</th>
-				<th>SupName</th>
-				<th>SupAddress</th>
+				<th>Supplier Name</th>
+				<th>Supplier Address</th>
+				<th>Supplier Contact</th>
+				<th>Product Id</th>
+				<th>Category Id</th>
+				<th>Category Name</th>
+				
+				
 				
 				<th colspan="2">Action</th>
 			</tr>
@@ -116,15 +122,20 @@
 			<c:forEach items="${suppliers}" var="supplier">
 				<tr>
 					<td><c:out value="${supplier.supplierId}" /></td>
-					<td><c:out value="${supplier.supName}" /></td>
-					<td><c:out value="${supplier.supAddress}" /></td>
+					<td><c:out value="${supplier.supplierName}" /></td>
+					<td><c:out value="${supplier.supplierAddress}" /></td>
+					<td><c:out value="${supplier.supplierContact}" /></td>
+					<td><c:out value="${supplier.productId}" /></td>
+					<td><c:out value="${supplier.categoryId}" /></td>
+					<td><c:out value="${supplier.categoryName}" /></td>
+					
 					
 					<td><a
 						href="SupplierController.do?action=edit&supplierId=<c:out value="${supplier.supplierId }"/>">
-						<input type="submit" class="btn btn-info" value="Update" /></a></td>
+						<input type="submit" class="btn btn-success" value="Update" /></a></td>
 					<td><a
 						href="SupplierController.do?action=delete&supplierId=<c:out value="${supplier.supplierId }"/>">
-						<input type="submit" class="btn btn-info" value="Delete" /></a></td>
+						<input type="submit" class="btn btn-danger" value="Delete" /></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
